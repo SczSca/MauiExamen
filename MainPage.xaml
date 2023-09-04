@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiExamen.MainPage"
+             Title="Agenda">
+    <ScrollView>
+        <VerticalStackLayout Padding="5">
+            <Image x:Name="imagenPreview" IsVisible="false" />
+            <Label Text="nombre" FontSize="Medium"/>
+            <Entry x:Name="name" FontSize="Medium"/>
+            <Label Text="Dirección" FontSize="Medium"/>
+            <Entry x:Name="address" FontSize="Medium"/>
+            <Label Text="Teléfono" FontSize="Medium"/>
+            <Entry x:Name="phone" FontSize="Medium" Keyboard="Numeric"/>
+            <Label Text="Correo" FontSize="Medium"/>
+            <Entry x:Name="email" FontSize="Medium"/>
+            <Label Text="URL de la foto" FontSize="Medium"/>
+            <Entry x:Name="url" FontSize="Medium" TextChanged="UrlEntry_TextChanged"/>
+            <HorizontalStackLayout Padding="5">
+                <Button x:Name="saveBtn" Text="Guardar" FontSize="Medium" Clicked="Guardar_Clicked" BackgroundColor="#3C9513"
+                TextColor="#FCFCE9" IsEnabled="false"/>
+                <Button x:Name="editBtn" Text="Editar" FontSize="Medium" Clicked="Modificar_Clicked" BackgroundColor="#939513"
+                TextColor="#FCFCE9" IsVisible="false"/>
+                <Button x:Name="cancelBtn" Text="Cancelar" FontSize="Medium" Clicked="ResetearBtns" BackgroundColor="#133C95"
+                TextColor="#FCFCE9" IsVisible="false"/>
+            </HorizontalStackLayout>
+             <ListView x:Name="contactsList" ItemTapped="contactsList_ItemTapped"  SeparatorColor="Coral" RowHeight="100" Margin="15,1">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            
+                            <StackLayout Orientation="Horizontal" Padding="10">
+                                <StackLayout Orientation="Horizontal" Padding="5,0">
+                                    <Image Source="{Binding UrlFoto}" HeightRequest="80"/>
+                                    <Label Text="{Binding Nombre, StringFormat=' | Nombre: {0} '}"/>
+                                    <Label Text="{Binding Direccion, StringFormat=' | Dirección: {0} '}"/>
+                                    <Label Text="{Binding Telefono, StringFormat=' | Telefono: {0} '}"/>
+                                    <Label Text="{Binding CorreoElectronico, StringFormat=' | Email: {0} '}"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
