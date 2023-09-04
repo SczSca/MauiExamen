@@ -61,6 +61,8 @@ public partial class MainPage : ContentPage
     DatabaseManager dbManager;
     Cliente cliente;
 	List<Cliente> contactosView;
+	//bandera que permite desactivar el TextChanged del entry url
+	private bool validacionActive = true;
 
     public MainPage()
     {
@@ -86,11 +88,13 @@ public partial class MainPage : ContentPage
 			// cliente.Direccion = address.Text;
 			// cliente.Telefono = phone.Text;
 			// cliente.CorreoElectronico = email.Text;
+			validacionActive = false;
 			dbManager.GuardarCliente(cliente);
 			MostrarClientesInterfaz();
 			LimpiarCampos();
 			cliente = null;
-
+			validacionActive = true;
+			imagenPreview.IsVisible = false;
 			} else
 			{
 				DisplayAlert("Error","Faltan datos", "OK");
@@ -136,12 +140,14 @@ public partial class MainPage : ContentPage
 			cliente.Telefono = phone.Text;
 			cliente.CorreoElectronico = email.Text;
 			cliente.UrlFoto = url.Text;
-			dbManager.GuardarContacto(cliente);
+			validacionActive = false;
+			dbManager.GuardarCliente(cliente);
 			MostrarClientesInterfaz();
 			LimpiarCampos();
 			ResetearBtns(sender, e);
 			cliente = null;
-
+			validacionActive = true;
+			imagenPreview.IsVisible = false;
 			} else
 			{
 				DisplayAlert("Error","Faltan datos", "OK");
@@ -168,24 +174,26 @@ public partial class MainPage : ContentPage
 			address.Text = clienteTapped.Direccion;
 			phone.Text = clienteTapped.Telefono;
 			email.Text = clienteTapped.CorreoElectronico;
+			url.Text = clienteTapped.UrlFoto;
 			saveBtn.IsVisible = false;
-			searchBtn.IsVisible = false;
 			editBtn.IsVisible = true;
 			cancelBtn.IsVisible = true;
 			cliente = clienteTapped;
 			}
 		}
 	}
+	//método que permite validar que la URL sea una url y que sea de una imagen antes de guardar o editar
 	private void UrlEntry_TextChanged(object sender, TextChangedEventArgs e)
 	{
-		string url = e.NewTextValue;
+		if(!validacionActive) return;
+		string urlT = e.NewTextValue;
 
-		if (Uri.IsWellFormedUriString(url, UriKind.Absolute))
+		if (Uri.IsWellFormedUriString(urlT, UriKind.Absolute))
 		{
-			if (url.EndsWith(".jpg") || url.EndsWith(".png") || url.EndsWith(".jpeg"))
+			if (urlT.EndsWith(".jpg") || urlT.EndsWith(".png") || urlT.EndsWith(".jpeg"))
 			{
 				// La URL es válida y parece ser una URL de imagen
-				imagenPreview.Source = ImageSource.FromUri(new Uri(url));
+				imagenPreview.Source = ImageSource.FromUri(new Uri(urlT));
 				imagenPreview.IsVisible = true;
 				saveBtn.IsEnabled = true;
 			}
@@ -193,12 +201,16 @@ public partial class MainPage : ContentPage
 			{
 				// La URL es válida pero no es una imagen
 				imagenPreview.IsVisible = false;
+				DisplayAlert("Error", "El texto introducido es una URL, pero no de una imagen", "OK");
+				url.Text = "";
 			}
 		}
 		else
 		{
 			// La URL no es válida
 			imagenPreview.IsVisible = false;
+			DisplayAlert("Error", "El texto introducido no es una URL", "OK");
+			url.Text = "";
 		}
 	}
     // Método para limpiar los campos y restablecer estados
@@ -214,11 +226,13 @@ public partial class MainPage : ContentPage
 	private void ResetearBtns(object sender, EventArgs e)
 	{
 		saveBtn.IsVisible = true;
-		searchBtn.IsVisible = true;
 		cancelBtn.IsVisible = false;
 		editBtn.IsVisible = false;
 		saveBtn.IsEnabled = false;
+		validacionActive = false;
 		LimpiarCampos();
+		validacionActive = true;
+		imagenPreview.IsVisible = false;
 	}
 	private void MostrarClientesInterfaz()
 	{
