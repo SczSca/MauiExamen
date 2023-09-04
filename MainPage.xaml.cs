@@ -1,5 +1,7 @@
 ﻿namespace MauiExamen;
 
+using MauiExamen;
+using MauiExamen.Pages;
 using SQLite;
 
 public partial class MainPage : ContentPage
@@ -60,7 +62,7 @@ public partial class MainPage : ContentPage
     // Instancia de DatabaseManager para administrar la base de datos
     DatabaseManager dbManager;
     Cliente cliente;
-	List<Cliente> contactosView;
+	List<Cliente> clientesView;
 	//bandera que permite desactivar el TextChanged del entry url
 	private bool validacionActive = true;
 
@@ -159,7 +161,7 @@ public partial class MainPage : ContentPage
 		}
     }
 
-	private async void contactsList_ItemTapped(object sender, ItemTappedEventArgs e)
+	private async void clientsList_ItemTapped(object sender, ItemTappedEventArgs e)
 	{
 		string action = await DisplayActionSheet("Acciones:", "Cancelar", null, "Eliminar", "Editar");
 		if(action == "Eliminar")
@@ -236,9 +238,13 @@ public partial class MainPage : ContentPage
 	}
 	private void MostrarClientesInterfaz()
 	{
-		contactosView = dbManager.ObtenerClientes();
+		clientesView = dbManager.ObtenerClientes();
 		
-		contactsList.ItemsSource = contactosView;
+		clientsList.ItemsSource = clientesView;
+	}
+	private async void Producto_Clicked(object sender, EventArgs e)
+	{
+		await    Navigation.PushAsync(new Productos());
 	}
 }
 
