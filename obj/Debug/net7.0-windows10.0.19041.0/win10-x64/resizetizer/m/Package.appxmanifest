@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities" IgnorableNamespaces="uap rescap">
-  <Identity Name="813fdfad-133a-4aa5-ae1f-8846d6b3b1fc" Publisher="CN=User Name" Version="1.0.0.1" />
+  <Identity Name="813fdfad-133a-4aa5-ae1f-8846d6b3b1fc" Publisher="CN=A" Version="1.0.0.1" />
   <mp:PhoneIdentity PhoneProductId="FA9A21BB-A8D7-40EE-8F50-87777AD8EDE9" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>MauiExamen</DisplayName>
-    <PublisherDisplayName>User Name</PublisherDisplayName>
+    <PublisherDisplayName>A</PublisherDisplayName>
     <Logo>appiconStoreLogo.png</Logo>
   </Properties>
   <Dependencies>

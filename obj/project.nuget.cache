@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "aPUDIEzKAX2XX9JRN4x9SwDNVDVpQWi5GpzhIBUyl834ac6OaLRd7eAY7WiGdUFiLdOyucMyIIYHvi2hNRBwkw==",
+  "dgSpecHash": "rxJaUMTj+Ex8xRMkfCwMIGQQfP+R9bJ+nmeEXhrJgDvTXEo0innVH7teerlcEwYbYwCKt2TML2yWpFptQKWOVg==",
   "success": true,
   "projectFilePath": "c:\\Users\\Maggy\\Documents\\mauiExam\\MauiExamen\\MauiExamen.csproj",
   "expectedPackageFiles": [
@@ -110,6 +110,15 @@
     "C:\\Users\\Maggy\\.nuget\\packages\\xamarin.kotlin.stdlib.jdk8\\1.7.20.1\\xamarin.kotlin.stdlib.jdk8.1.7.20.1.nupkg.sha512",
     "C:\\Users\\Maggy\\.nuget\\packages\\xamarin.kotlinx.coroutines.android\\1.6.4.1\\xamarin.kotlinx.coroutines.android.1.6.4.1.nupkg.sha512",
     "C:\\Users\\Maggy\\.nuget\\packages\\xamarin.kotlinx.coroutines.core.jvm\\1.6.4.1\\xamarin.kotlinx.coroutines.core.jvm.1.6.4.1.nupkg.sha512",
+    "C:\\Users\\Maggy\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.win-x64\\7.0.10\\microsoft.netcore.app.runtime.mono.win-x64.7.0.10.nupkg.sha512",
+    "C:\\Users\\Maggy\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\7.0.10\\microsoft.windowsdesktop.app.runtime.win-x64.7.0.10.nupkg.sha512",
+    "C:\\Users\\Maggy\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\7.0.10\\microsoft.aspnetcore.app.runtime.win-x64.7.0.10.nupkg.sha512",
+    "C:\\Users\\Maggy\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.win-x64\\7.0.10\\microsoft.netcore.app.runtime.mono.win-x64.7.0.10.nupkg.sha512",
+    "C:\\Users\\Maggy\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\7.0.10\\microsoft.windowsdesktop.app.runtime.win-x64.7.0.10.nupkg.sha512",
+    "C:\\Users\\Maggy\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\7.0.10\\microsoft.aspnetcore.app.runtime.win-x64.7.0.10.nupkg.sha512",
+    "C:\\Users\\Maggy\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.win-x64\\7.0.10\\microsoft.netcore.app.runtime.mono.win-x64.7.0.10.nupkg.sha512",
+    "C:\\Users\\Maggy\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\7.0.10\\microsoft.windowsdesktop.app.runtime.win-x64.7.0.10.nupkg.sha512",
+    "C:\\Users\\Maggy\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\7.0.10\\microsoft.aspnetcore.app.runtime.win-x64.7.0.10.nupkg.sha512",
     "C:\\Users\\Maggy\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\7.0.10\\microsoft.netcore.app.runtime.win-x64.7.0.10.nupkg.sha512",
     "C:\\Users\\Maggy\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\7.0.10\\microsoft.windowsdesktop.app.runtime.win-x64.7.0.10.nupkg.sha512",
     "C:\\Users\\Maggy\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\7.0.10\\microsoft.aspnetcore.app.runtime.win-x64.7.0.10.nupkg.sha512",
