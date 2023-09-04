@@ -5,7 +5,8 @@
              Title="Agenda">
     <ScrollView>
         <VerticalStackLayout Padding="5">
-            <Image x:Name="imagenPreview" IsVisible="false" />
+            <!-- Elemento que carga la imagen que se quiere guardar -->
+            <Image x:Name="imagenPreview" IsVisible="false" HeightRequest="120"/>
             <Label Text="nombre" FontSize="Medium"/>
             <Entry x:Name="name" FontSize="Medium"/>
             <Label Text="Dirección" FontSize="Medium"/>
