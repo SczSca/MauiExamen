@@ -5,6 +5,10 @@
              Title="Agenda">
     <ScrollView>
         <VerticalStackLayout Padding="5">
+            <HorizontalStackLayout Padding="5">
+                <Button x:Name="productosBtn" Text="Ir a Productos" FontSize="Medium" Clicked="Producto_Clicked" BackgroundColor="#3C9513"
+                TextColor="#FCFCE9" />
+            </HorizontalStackLayout>
             <!-- Elemento que carga la imagen que se quiere guardar -->
             <Image x:Name="imagenPreview" IsVisible="false" HeightRequest="120"/>
             <Label Text="nombre" FontSize="Medium"/>
@@ -25,7 +29,7 @@
                 <Button x:Name="cancelBtn" Text="Cancelar" FontSize="Medium" Clicked="ResetearBtns" BackgroundColor="#133C95"
                 TextColor="#FCFCE9" IsVisible="false"/>
             </HorizontalStackLayout>
-             <ListView x:Name="contactsList" ItemTapped="contactsList_ItemTapped"  SeparatorColor="Coral" RowHeight="100" Margin="15,1">
+             <ListView x:Name="clientsList" ItemTapped="clientsList_ItemTapped"  SeparatorColor="Coral" RowHeight="100" Margin="15,1">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
